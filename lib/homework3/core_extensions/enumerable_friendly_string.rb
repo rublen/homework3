@@ -3,7 +3,13 @@
 module Homework3
   module CoreExtensions
     module EnumerableFriendlyString
-      # put your code here
+      def to_proc
+        if self == '+'
+          proc { |memo, el| memo.send(self, el) }
+        else
+          proc { |elem| elem.send(self) }
+        end
+      end
     end
   end
 end
