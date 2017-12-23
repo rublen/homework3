@@ -3,7 +3,7 @@
 module Homework3
   module Extender
     def self.call(_object, _interface)
-      # put your code here
+      _object.singleton_class.prepend _interface
     end
   end
 end
