@@ -5,7 +5,7 @@ require 'spec_helper'
 describe Homework3::CoreExtensions::InjectableArray do
   # It is needed to have simple version of inject. Yeah, we need more bisycles!
   describe '#simple_inject' do
-    Too complicated ceses
+    # Too complicated ceses
     specify { expect([1, 2].inject(:+) {}).to be_nil }
     specify { expect([1, 2].simple_inject(:+)).to eq 3 }
     specify { expect((5..10).simple_inject(1, :*)).to eq 151_200 }

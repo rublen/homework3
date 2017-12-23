@@ -2,6 +2,10 @@
 
 module Homework3
   class DynamicProxy
-    # put your code here
+    def initialize(args)
+      args.each do |k, v|
+        define_singleton_method(k) { v } unless v.nil?
+      end
+    end
   end
 end

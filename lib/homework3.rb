@@ -9,4 +9,5 @@ module Homework3
   # we include additional functionality into core classes implicitly
   String.include CoreExtensions::EnumerableFriendlyString
   Array.include CoreExtensions::InjectableArray
+  Range.include CoreExtensions::InjectableArray
 end
