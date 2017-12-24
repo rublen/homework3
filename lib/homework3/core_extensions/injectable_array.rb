@@ -9,10 +9,10 @@ module Homework3
           raise ArgumentError if sym
           each { |el| memo = yield(memo, el) }
         elsif sym
-          each { |el| memo = memo.send(sym, el) }
+          each { |el| memo = memo.public_send(sym, el) }
         elsif memo.is_a? Symbol
           sym, memo = memo, shift
-          each { |el| memo = memo.send(sym, el) }
+          each { |el| memo = memo.public_send(sym, el) }
         elsif empty?
           memo = nil
         else

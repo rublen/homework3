@@ -5,9 +5,9 @@ module Homework3
     module EnumerableFriendlyString
       def to_proc
         if self == '+'
-          proc { |memo, el| memo.send(self, el) }
+          proc { |memo, el| memo.public_send(self, el) }
         else
-          proc { |elem| elem.send(self) }
+          proc { |el| el.public_send(self) }
         end
       end
     end
