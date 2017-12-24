@@ -2,8 +2,8 @@
 
 module Homework3
   module Extender
-    def self.call(_object, _interface)
-      _object.singleton_class.prepend _interface
+    def self.call(object, interface)
+      object.singleton_class.prepend interface
     end
   end
 end

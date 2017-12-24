@@ -6,7 +6,7 @@ describe Homework3::CoreExtensions::InjectableArray do
   # It is needed to have simple version of inject. Yeah, we need more bisycles!
   describe '#simple_inject' do
     # Too complicated ceses
-    specify { expect([1, 2].inject(:+) {}).to be_nil }
+    specify { expect([1, 2].inject(:+){}).to be_nil }
     specify { expect([1, 2].simple_inject(:+)).to eq 3 }
     specify { expect((5..10).simple_inject(1, :*)).to eq 151_200 }
     specify { expect { [1].simple_inject(0) }.to raise_error(TypeError) }
@@ -34,9 +34,9 @@ describe Homework3::CoreExtensions::InjectableArray do
       expect(array.method(:simple_inject).original_name).not_to eq(:inject)
     end
 
-    specify { expect([].simple_inject(0) {}).to be_zero }
-    specify { expect([].simple_inject {}).to be_nil }
-    specify { expect(array.simple_inject(0) {}).to be_nil }
+    specify { expect([].simple_inject(0){}).to be_zero }
+    specify { expect([].simple_inject{}).to be_nil }
+    specify { expect(array.simple_inject(0){}).to be_nil }
 
     specify do
       expect(array.simple_inject(0) { |result, x| result + x }).to eq 1
